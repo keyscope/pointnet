@@ -1,77 +1,165 @@
-## PointNet: *Deep Learning on Point Sets for 3D Classification and Segmentation*
-Created by <a href="http://charlesrqi.com" target="_blank">Charles R. Qi</a>, <a href="http://ai.stanford.edu/~haosu/" target="_blank">Hao Su</a>, <a href="http://cs.stanford.edu/~kaichun/" target="_blank">Kaichun Mo</a>, <a href="http://geometry.stanford.edu/member/guibas/" target="_blank">Leonidas J. Guibas</a> from Stanford University.
+# Quick Start Instructions:
 
-![prediction example](https://github.com/charlesq34/pointnet/blob/master/doc/teaser.png)
+1. Download the latest release.
+2. Install the application and open it on your device.
+3. Log in with your professional email credentials.
+4. Use the sidebar to navigate: Channels appear on the left and conversations on the right.
 
-### Introduction
-This work is based on our [arXiv tech report](https://arxiv.org/abs/1612.00593), which is going to appear in CVPR 2017. We proposed a novel deep net architecture for point clouds (as unordered point sets). You can also check our [project webpage](http://stanford.edu/~rqi/pointnet) for a deeper introduction.
+## Setting Up Your Slack Workspace
 
-Point cloud is an important type of geometric data structure. Due to its irregular format, most researchers transform such data to regular 3D voxel grids or collections of images. This, however, renders data unnecessarily voluminous and causes issues. In this paper, we design a novel type of neural network that directly consumes point clouds, which well respects the permutation invariance of points in the input.  Our network, named PointNet, provides a unified architecture for applications ranging from object classification, part segmentation, to scene semantic parsing. Though simple, PointNet is highly efficient and effective.
+Each team works within a **workspace**, which serves as a centralized hub for communication, integrations, and shared tools.
 
-In this repository, we release code and data for training a PointNet classification network on point clouds sampled from 3D shapes, as well as for training a part segmentation network on ShapeNet Part dataset.
+### Creating a Workspace
 
-### Citation
-If you find our work useful in your research, please consider citing:
+1. Start the workspace creation process.
+2. Click to create a new workspace.
+3. Enter your work email and complete verification.
+4. Choose a workspace name (e.g., "Acme Corp") and configure your initial channel.
 
-	@article{qi2016pointnet,
-	  title={PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation},
-	  author={Qi, Charles R and Su, Hao and Mo, Kaichun and Guibas, Leonidas J},
-	  journal={arXiv preprint arXiv:1612.00593},
-	  year={2016}
-	}
-   
-### Installation
+### Inviting Members
 
-Install <a href="https://www.tensorflow.org/get_started/os_setup" target="_blank">TensorFlow</a>. You may also need to install h5py. The code has been tested with Python 2.7, TensorFlow 1.0.1, CUDA 8.0 and cuDNN 5.1 on Ubuntu 14.04. 
+* Click your workspace name > Invite people
+* Send invitations via email or share a link for open-access teams
 
-If you are using PyTorch, you can find a third-party pytorch implementation <a href="https://github.com/fxia22/pointnet.pytorch" target="_blank">here</a>.
+### Managing Workspaces
 
-To install h5py for Python:
-```bash
-sudo apt-get install libhdf5-dev
-sudo pip install h5py
-```
+Admins can:
 
-### Usage
-To train a model to classify point clouds sampled from 3D shapes:
+* Control who can create channels or install apps
+* Limit posting permissions in main channels
+* Access usage metrics and activity reports
 
-    python train.py
+**Pro Tip**: You can join multiple workspaces — click your profile image and select **Add another workspace**.
 
-Log files and network parameters will be saved to `log` folder in default. Point clouds of <a href="http://modelnet.cs.princeton.edu/" target="_blank">ModelNet40</a> models in HDF5 files will be automatically downloaded (416MB) to the data folder. Each point cloud contains 2048 points uniformly sampled from a shape surface. Each cloud is zero-mean and normalized into an unit sphere. There are also text files in `data/modelnet40_ply_hdf5_2048` specifying the ids of shapes in h5 files.
+## Mastering Channels and Conversations
 
-To see HELP for the training script:
+Channels help keep conversations organized by project, team, or topic.
 
-    python train.py -h
+### Types of Channels
 
-We can use TensorBoard to view the network architecture and monitor the training progress.
+* **Public Channels**: Open to all members
+* **Private Channels**: Restricted to selected users
+* **Shared Channels**: Allow collaboration with external teams
 
-    tensorboard --logdir log
+### Channel Actions
 
-After the above training, we can evaluate the model and output some visualizations of the error cases.
+* **Create**: Use the `+` next to Channels
+* **Join**: Use the channel browser or press `Ctrl+K` / `Cmd+K`
+* **Mute**: Type `/mute` or adjust settings
+* **Archive**: Go to settings > Archive this channel
 
-    python evaluate.py --visu
+### Threads
 
-Point clouds that are wrongly classified will be saved to `dump` folder in default. We visualize the point cloud by rendering it into three-view images.
+* Use threaded replies to keep discussions organized
+* Optionally notify the main channel when needed
 
-If you'd like to prepare your own data, you can refer to some helper functions in `utils/data_prep_util.py` for saving and loading HDF5 files.
+### Direct and Group Messaging
 
-### Part Segmentation
-To train a model for object part segmentation, firstly download the data:
+* DMs: Private one-on-one chats
+* Group DMs: Private chats for up to nine participants
 
-    cd part_seg
-    sh download_data.sh
+## Voice, Video, and Screen Sharing
 
-The downloading script will download <a href="http://web.stanford.edu/~ericyi/project_page/part_annotation/index.html" target="_blank">ShapeNetPart</a> dataset (around 1.08GB) and our prepared HDF5 files (around 346MB).
+Slack includes tools for voice, video, and screen collaboration.
 
-Then you can run `train.py` and `test.py` in the `part_seg` folder for training and testing (computing mIoU for evaluation).
+### Native Calls
 
-### License
-Our code is released under MIT License (see LICENSE file for details).
+* Start a call using the phone or camera icons
+* Group calls supported on premium plans
 
-### Selected Projects that Use PointNet
+### Features
 
-* <a href="http://stanford.edu/~rqi/pointnet2/" target="_blank">PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space</a> by Qi et al. (NIPS 2017) A hierarchical feature learning framework on point clouds. The PointNet++ architecture applies PointNet recursively on a nested partitioning of the input point set. It also proposes novel layers for point clouds with non-uniform densities.
-* <a href="http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w13/Engelmann_Exploring_Spatial_Context_ICCV_2017_paper.pdf" target="_blank">Exploring Spatial Context for 3D Semantic Segmentation of Point Clouds</a> by Engelmann et al. (ICCV 2017 workshop). This work extends PointNet for large-scale scene segmentation.
-* <a href="https://arxiv.org/abs/1710.04954" target="_blank">PCPNET: Learning Local Shape Properties from Raw Point Clouds</a> by Guerrero et al. (arXiv). The work adapts PointNet for local geometric properties (e.g. normal and curvature) estimation in noisy point clouds.
-* <a href="https://arxiv.org/abs/1711.06396" target="_blank">VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection</a> by Zhou et al. from Apple (arXiv) This work studies 3D object detection using LiDAR point clouds. It splits space into voxels, use PointNet to learn local voxel features and then use 3D CNN for region proposal, object classification and 3D bounding box estimation.
-* <a href="https://arxiv.org/abs/1711.08488" target="_blank">Frustum PointNets for 3D Object Detection from RGB-D Data</a> by Qi et al. (arXiv) A novel framework for 3D object detection with RGB-D data. The method proposed has achieved first place on KITTI 3D object detection benchmark on all categories (last checked on 11/30/2017).
+* Share your screen instantly
+* Use annotation tools during screen sharing
+* Invite others to join ongoing calls
+
+### Using Commands
+
+* `/call` – starts a native voice or video session
+* `/zoom` or `/meet` – opens third-party video sessions
+
+### Recording Messages
+
+Execute voice or video commands to capture messages, which are then shared internally.
+
+## Optimizing Your Slack Profile and Availability
+
+Your profile helps coworkers understand your role, status, and availability.
+
+### Setting Up Your Profile
+
+* Click your name > Profile & account > Edit Profile
+* Customize:
+
+  * Display name
+  * Role and team
+  * Status message
+  * Time zone
+  * Profile picture
+
+### Status & Availability
+
+* Set your status manually or sync via calendar apps
+* Use emojis for quick visual updates
+* Turn on Do Not Disturb to pause notifications
+
+**Pro Tip**: Enable timers so your status reverts automatically.
+
+## Using Slack Apps and Integrations Effectively
+
+Slack integrates with many tools to improve workflows and team efficiency.
+
+### Installing Apps
+
+1. Open the app directory
+2. Browse by category
+3. Install and authorize access
+
+### Recommended Apps
+
+* Task management tools
+* File storage services
+* Video call platforms
+* Async meeting and reporting tools
+
+### Custom Integrations
+
+* Develop custom bots
+* Set up incoming/outgoing webhooks
+* Create custom slash commands
+
+**Admin Tip**: Restrict app usage to approved tools.
+
+## Advanced Features, Automation, and Pro Tips
+
+Maximize productivity with advanced Slack features.
+
+### Search Like a Pro
+
+* `from:@name` – messages from a specific user
+* `in:#channel` – search within a channel
+* `has:pin` – only pinned messages
+* `before:2024-01-01` – messages before a specific date
+
+### Message Formatting
+
+* Bold: `*text*`
+* Italics: `_text_`
+* Code: `` `code` ``
+* Blockquote: `>` or `>>>`
+* Lists: `* item` or `1. item`
+
+### Keyboard Shortcuts
+
+* `Ctrl/Cmd + K` – Switch between channels or DMs
+* `Esc` – Mark channel as read
+* `Ctrl/Cmd + Shift + A` – Show all unread messages
+* `Ctrl/Cmd + /` – View all shortcuts
+
+### Productivity Boosters
+
+* Use personal DMs as a scratchpad
+* Make a #to-do channel and track tasks in threads
+* Represent progress with emojis
+* Set up keyword alerts via Preferences
+* Compose formatted notes or documents using posts
